@@ -25,6 +25,14 @@ Note how the common prefix "The quick brown" is obfuscated to "eng($\_ ét" in b
 
 ## Installation
 
+### From PyPI (Recommended)
+
+```bash
+pip install llm-obfuscator
+```
+
+### From Source
+
 1. Clone the repository:
 
 ```bash
@@ -38,12 +46,33 @@ cd llm-obfusicator
 pip install -r requirements.txt
 ```
 
+3. Install the package in development mode:
+
+```bash
+pip install -e .
+```
+
 ## Usage
 
-### Basic Usage
+### Command Line Interface
+
+The package provides a command-line interface for easy use:
+
+```bash
+# Tokenize text
+llm-obfuscator tokenize gpt-4 "Hello, world!"
+
+# Obfuscate text
+llm-obfuscator obfuscate gpt-4 "Hello, world!"
+
+# Obfuscate text with a fixed shift
+llm-obfuscator obfuscate gpt-4 "Hello, world!" --shift 42
+```
+
+### Python API
 
 ```python
-from src.main import obfuscate_text
+from llm_obfuscator import obfuscate_text, tokenize_text
 
 # Obfuscate text using a specific model's tokenizer
 obfuscated = obfuscate_text("gpt-4", "Hello, world!")
@@ -52,6 +81,10 @@ print(obfuscated)
 # Use a fixed shift value for deterministic results
 obfuscated = obfuscate_text("gpt-4", "Hello, world!", shift=42)
 print(obfuscated)
+
+# Tokenize text
+tokens = tokenize_text("gpt-4", "Hello, world!")
+print(tokens)
 ```
 
 ### Supported Models

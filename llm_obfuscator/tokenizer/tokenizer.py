@@ -1,5 +1,5 @@
-from src.tokenizer.huggingface_tokenizer import HuggingFaceTokenizer
-from src.tokenizer.openai_tokenizer import OpenAITokenizer
+from llm_obfuscator.tokenizer.huggingface_tokenizer import HuggingFaceTokenizer
+from llm_obfuscator.tokenizer.openai_tokenizer import OpenAITokenizer
 import tiktoken
 import logging
 

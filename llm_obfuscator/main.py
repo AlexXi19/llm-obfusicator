@@ -1,4 +1,4 @@
-from src.tokenizer.tokenizer import TokenizerRegistry
+from llm_obfuscator.tokenizer.tokenizer import TokenizerRegistry
 import random
 
 def tokenize_text(model_name: str, text: str) -> list:
